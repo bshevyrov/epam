@@ -1,4 +1,7 @@
-package ua.com.company;
+package ua.com.utils;
+
+import ua.com.company.StringUtils;
+
 public final class Utils {
     private Utils() {}
 
