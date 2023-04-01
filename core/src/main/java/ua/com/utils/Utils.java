@@ -10,7 +10,7 @@ public final class Utils {
             return false;
         }
         for (String s : str) {
-            if(StringUtils.isPositiveNumber(s)){
+            if(!StringUtils.isPositiveNumber(s)){
                 return false;
             }
         }
