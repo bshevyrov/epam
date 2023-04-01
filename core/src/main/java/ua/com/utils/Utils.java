@@ -6,13 +6,14 @@ public final class Utils {
     private Utils() {}
 
     public static boolean isAllPositiveNumbers(String... str){
-        if(str.length>0) {
-            for (String s : str) {
-                if (StringUtils.isPositiveNumber(s)) {
-                    return true;
-                }
+        if(str.length<1) {
+            return false;
+        }
+        for (String s : str) {
+            if(StringUtils.isPositiveNumber(s)){
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }
