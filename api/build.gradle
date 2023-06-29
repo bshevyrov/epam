@@ -3,10 +3,28 @@ plugins {
     id 'application'
 }
 
+java {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+}
+
 dependencies {
     implementation project(':core')
 }
 
 application {
     mainClass = 'ua.com.company.App'
+}
+
+
+task fatJar(type: Jar) {
+
+    manifest {
+        attributes(
+                'Main-Class': 'ua.com.company.App'
+        )
+    }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
